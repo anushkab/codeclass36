@@ -1,35 +1,12 @@
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <cassert>
-#include <cmath>
-#include <climits>
-
-#include <sstream>
 #include <iostream>
-#include <iomanip>
-#include <map>
-#include <unordered_map>
-#include <set>
-#include <unordered_set>
 #include <queue>
-#include <stack>
-#include <utility>
-#include <vector>
-#include <functional>
-#include <algorithm>
 
 using namespace std;
 
 #define fast_cin() ios_base::sync_with_stdio(false)
 
-typedef long double ld;
-typedef long long ll;
-typedef pair <int, int> pii;
-typedef pair <ll, ll> pll;
-
 const int max_N = 1e5 + 10;
-const ll inf = 1e9 + 42;
+const int inf = 1e9 + 42;
 
 int dist[max_N];
 vector<int> E[max_N];
@@ -76,7 +53,7 @@ void bfs(int source, int N)
 	queue<int> bfq;
 
 	while(!bfq.empty()) {
-		int u = bfq.top();
+		int u = bfq.front();
 		for (auto &v : E[u]) {
 			/*
 			 * note the naming convention that makes it easier
